@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+
+<!-- IMPORTANT -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<section class="feedback-sec" id="feedback">
+  <div class="container">
+    <div class="sec-head" style="padding-top:0">
+      <h2 class="sec-title">Share Your Feedback</h2>
+      <p class="sec-sub">Your experience helps us improve and inspires others to join our mission</p>
+    </div>
+    <div class="feedback-box">
+      <h3>Submit Your Testimonial</h3>
+      <p>Fill in the form below. Our team reviews every submission before it appears publicly.</p>
+      <div class="fb-row">
+        <div class="fb-group"><label>First Name *</label><input type="text" id="fb-fname" placeholder="Your first name"></div>
+        <div class="fb-group"><label>Last Name *</label><input type="text" id="fb-lname" placeholder="Your last name"></div>
+      </div>
+      <div class="fb-group"><label>Email *</label><input type="email" id="fb-email" placeholder="your@email.com"></div>
+      <div class="fb-group"><label>Your Role / Location</label><input type="text" id="fb-role" placeholder="e.g. Volunteer, Kondapur / Feeder, Old City"></div>
+      <div class="fb-group">
+        <label>Your Rating *</label>
+        <div class="star-rating">
+          <input type="radio" name="rating" id="s5" value="5"><label for="s5">★</label>
+          <input type="radio" name="rating" id="s4" value="4"><label for="s4">★</label>
+          <input type="radio" name="rating" id="s3" value="3"><label for="s3">★</label>
+          <input type="radio" name="rating" id="s2" value="2"><label for="s2">★</label>
+          <input type="radio" name="rating" id="s1" value="1"><label for="s1">★</label>
+        </div>
+      </div>
+      <div class="fb-group"><label>Your Testimonial *</label><textarea id="fb-msg" placeholder="Share your experience with GOCAF — your rescue story, volunteer journey, or how GOCAF made a difference..."></textarea></div>
+      <button class="btn btn-teal" style="width:100%;font-size:17px;padding:14px" onclick="submitFeedback()">Submit Testimonial →</button>
+    </div>
+  </div>
+</section>
+</body>
+</html>
