@@ -14,19 +14,22 @@
    ============================================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Roboto',sans-serif;color:#333;background:#FAF8F5;overflow-x:hidden}
+body{font-family:'Roboto',sans-serif;color:#333;background:#FDF8FC;overflow-x:hidden}
 a{text-decoration:none}
 img{max-width:100%;height:auto;display:block}
 ul{list-style:none}
 :root{
-  --teal:#3B6E6E;--teal-dark:#2A5252;--teal-light:#E5EFEF;
-  --orange:#C17B3A;--orange-dark:#A5612A;
-  --purple:#6B4F8E;
-  --gray-light:#F5F5F0;--gray:#CCCCCC;--gray-mid:#777;
+  /* GOCAF Logo Palette — pink-to-purple gradient */
+  --teal:#B5366A;--teal-dark:#8C1F50;--teal-light:#F9E8F0;
+  --orange:#7B3FA0;--orange-dark:#5E2880;
+  --purple:#6B2FA0;
+  --gray-light:#F8F5FA;--gray:#CCCCCC;--gray-mid:#777;
   --black:#1C1C1C;--white:#fff;
   --shadow:0 4px 20px rgba(0,0,0,.08);
   --radius:4px;
-  --cream:#FAF8F5;--navy:#1C2B3A;
+  --cream:#FDF8FC;--navy:#2A1040;
+  /* Gradient used in logo */
+  --grad:linear-gradient(135deg,#C8375A 0%,#9B2E8A 50%,#6B3FA0 100%);
 }
 
 /* ============================================================
@@ -47,43 +50,42 @@ ul{list-style:none}
 .sec-center{text-align:center;padding:10px 0 28px}
 
 /* ============================================================
-   TOPBAR  ← FIXED: flex layout so social icons never cut off
+   TOPBAR  — refined professional layout
    ============================================================ */
-#header{position:sticky;top:0;background:#fff;z-index:3000;box-shadow:0 2px 12px rgba(0,0,0,.1)}
-.topbar{background:var(--teal);color:#fff;height:38px;overflow:hidden}
+#header{position:sticky;top:0;background:#fff;z-index:3000;box-shadow:0 1px 0 rgba(0,0,0,.04),0 4px 20px rgba(0,0,0,.06)}
+.topbar{background:var(--grad);color:#fff;height:36px;overflow:hidden}
 .topbar-inner{
   display:flex;align-items:center;
-  height:38px;
-  /* Three zones: left | center | right (social) */
+  height:36px;
 }
 .topbar-left{
-  font-size:13px;color:rgba(255,255,255,.9);
+  font-size:12.5px;color:rgba(255,255,255,.92);
   white-space:nowrap;padding:0 16px 0 0;
-  flex:0 0 auto;
+  flex:0 0 auto;letter-spacing:.2px;font-weight:500;
 }
 .topbar-center{
   display:flex;flex:1 1 auto;
-  justify-content:center;
+  justify-content:center;gap:2px;
 }
 .topbar-center a{
-  color:rgba(255,255,255,.85);font-size:13px;
-  height:38px;line-height:38px;padding:0 14px;transition:background .2s;white-space:nowrap;
+  color:rgba(255,255,255,.88);font-size:12.5px;font-weight:500;
+  height:36px;line-height:36px;padding:0 14px;transition:background .2s,color .2s;white-space:nowrap;letter-spacing:.2px;
 }
-.topbar-center a:hover{background:rgba(255,255,255,.15);color:#fff}
+.topbar-center a:hover{background:rgba(255,255,255,.12);color:#fff}
 .topbar-social{
-  display:flex;align-items:center;gap:4px;
-  flex:0 0 auto;padding-left:8px;
+  display:flex;align-items:center;gap:6px;
+  flex:0 0 auto;padding-left:12px;
 }
-/* Social icon — circle button with SVG */
+/* Social icon — refined */
 .soc{
-  width:30px;height:30px;flex-shrink:0;
+  width:28px;height:28px;flex-shrink:0;
   display:inline-flex;align-items:center;justify-content:center;
-  border-radius:50%;background:rgba(255,255,255,.12);
-  color:rgba(255,255,255,.9);transition:background .2s;cursor:pointer;
+  border-radius:50%;background:rgba(255,255,255,.14);
+  color:rgba(255,255,255,.95);transition:background .2s,transform .2s;cursor:pointer;
 }
-.soc:hover{background:rgba(255,255,255,.3);color:#fff}
-.soc svg{width:14px;height:14px;fill:currentColor;pointer-events:none;display:block}
-.contact-sec{background:#1C2B3A;color:#fff;padding:64px 0}
+.soc:hover{background:rgba(255,255,255,.28);color:#fff;transform:translateY(-1px)}
+.soc svg{width:13px;height:13px;fill:currentColor;pointer-events:none;display:block}
+.contact-sec{background:#2A1040;color:#fff;padding:64px 0}
 .contact-sec h2{font-size:34px;font-weight:900;margin-bottom:8px}
 .contact-sec>.container>p{font-size:16px;max-width:660px;line-height:1.6;margin-bottom:30px;color:rgba(255,255,255,.75)}
 .c-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
@@ -107,25 +109,29 @@ ul{list-style:none}
 .c-soc-btn svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
 
 /* ============================================================
-   MAIN NAV
+   MAIN NAV — refined professional layout
    ============================================================ */
-.header-main{display:flex;align-items:center;justify-content:space-between;height:82px;gap:8px}
-.logo-wrap img{height:70px;width:auto}
-.desktop-nav{display:flex;flex:1;justify-content:center}
+.header-main{display:flex;align-items:center;justify-content:space-between;height:84px;gap:16px}
+.logo-wrap{display:flex;align-items:center;flex-shrink:0;transition:opacity .2s}
+.logo-wrap:hover{opacity:.85}
+.logo-wrap img{height:62px;width:auto;display:block}
+.desktop-nav{display:flex;flex:1;justify-content:center;align-items:center}
 .nav-item{position:relative}
 .nav-link{
-  display:flex;align-items:center;gap:4px;
-  height:82px;padding:0 15px;font-size:15px;color:var(--black);
-  cursor:pointer;font-weight:500;white-space:nowrap;position:relative;
+  display:flex;align-items:center;gap:5px;
+  height:84px;padding:0 16px;font-size:14.5px;color:var(--black);
+  cursor:pointer;font-weight:600;white-space:nowrap;position:relative;
+  letter-spacing:.2px;transition:color .2s;
 }
 .nav-link::after{
-  content:'';position:absolute;bottom:0;left:15px;right:15px;
-  height:3px;background:var(--teal);transform:scaleX(0);
-  transition:transform .3s;border-radius:2px 2px 0 0;
+  content:'';position:absolute;bottom:18px;left:50%;transform:translateX(-50%) scaleX(0);
+  width:calc(100% - 32px);height:2px;background:var(--teal);
+  transition:transform .3s ease;border-radius:2px;transform-origin:center;
 }
-.nav-item:hover .nav-link{color:var(--teal);font-weight:700}
-.nav-item:hover .nav-link::after{transform:scaleX(1)}
-.nav-arr{font-size:9px;color:var(--gray-mid)}
+.nav-item:hover .nav-link{color:var(--teal)}
+.nav-item:hover .nav-link::after{transform:translateX(-50%) scaleX(1)}
+.nav-arr{font-size:10px;color:var(--gray-mid);transition:transform .25s,color .2s;display:inline-block}
+.nav-item:hover .nav-arr{color:var(--teal);transform:rotate(180deg)}
 
 /* MEGA MENU */
 .mega{
@@ -159,16 +165,21 @@ ul{list-style:none}
 .g-more{display:block;text-align:center;margin:12px auto 0;
   font-size:14px;font-weight:700;color:var(--orange)}
 
-/* Header Right */
-.h-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.search-btn{background:none;border:0;cursor:pointer;color:var(--gray-mid);padding:6px;display:flex;align-items:center}
-.search-btn svg{width:22px;height:22px;fill:currentColor}
-.search-btn:hover{color:var(--teal)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:4px}
-.hamburger span{display:block;width:24px;height:2.5px;background:var(--black);border-radius:2px;transition:.3s}
+/* Header Right — refined action cluster */
+.h-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.search-btn{background:none;border:0;cursor:pointer;color:var(--gray-mid);padding:8px;display:flex;align-items:center;border-radius:50%;transition:background .2s,color .2s}
+.search-btn svg{width:18px;height:18px;fill:currentColor}
+.search-btn:hover{color:var(--teal);background:var(--teal-light)}
+.h-right .btn{padding:10px 22px;font-size:13px;letter-spacing:.6px;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:all .2s}
+.h-right .btn-orange{background:var(--purple)}
+.h-right .btn-orange:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(107,47,160,.3)}
+.h-right .btn-teal:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(181,54,106,.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:8px;border-radius:6px;transition:background .2s}
+.hamburger:hover{background:var(--teal-light)}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--black);border-radius:2px;transition:.3s}
 
 /* Search overlay */
-.search-ov{display:none;position:fixed;inset:0;background:rgba(46,139,122,.92);z-index:6000;align-items:center;justify-content:center}
+.search-ov{display:none;position:fixed;inset:0;background:rgba(181,54,106,.92);z-index:6000;align-items:center;justify-content:center}
 .search-ov.show{display:flex}
 .s-box{width:90%;max-width:600px;text-align:center}
 .s-box h2{color:#fff;font-size:42px;font-weight:900;margin-bottom:20px}
@@ -218,7 +229,7 @@ ul{list-style:none}
 /* ============================================================
    MISSION BAND
    ============================================================ */
-.mission-band{background:var(--teal);color:#fff;padding:46px 24px;text-align:center}
+.mission-band{background:var(--grad);color:#fff;padding:46px 24px;text-align:center}
 .mission-band h1{font-size:34px;font-weight:900;max-width:880px;margin:0 auto 14px;line-height:1.2}
 .mission-band p{font-size:17px;max-width:800px;margin:0 auto;line-height:1.75;color:rgba(255,255,255,.92)}
 .m-stats{display:flex;justify-content:center;gap:40px;margin-top:34px;flex-wrap:wrap}
@@ -264,7 +275,7 @@ ul{list-style:none}
 /* ============================================================
    FEEDBACK TRIGGER BAR + MODAL
    ============================================================ */
-.fb-trigger-bar{background:var(--teal);padding:18px 24px}
+.fb-trigger-bar{background:var(--grad);padding:18px 24px}
 .fb-trigger-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .fb-trigger-inner strong{display:block;font-size:16px;font-weight:700;color:#fff}
 .fb-trigger-inner span{font-size:13px;color:rgba(255,255,255,.8)}
@@ -330,7 +341,7 @@ ul{list-style:none}
 /* ============================================================
    COUNTER
    ============================================================ */
-.ctr-sec{background:var(--teal-light);padding:64px 0 48px}
+.ctr-sec{background:#F9E8F0;padding:64px 0 48px}
 .ctr-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:28px}
 .ci{text-align:center;flex:0 0 calc(33% - 30px);max-width:290px}
 .ci-ico{font-size:58px;margin-bottom:12px;line-height:1}
@@ -349,7 +360,7 @@ ul{list-style:none}
 .ac-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 55%,rgba(0,0,0,.12));
   display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
   padding:22px 18px;text-align:center;transition:background .3s}
-.ac:hover .ac-ov{background:linear-gradient(to top,rgba(46,139,122,.85) 55%,rgba(46,139,122,.18))}
+.ac:hover .ac-ov{background:linear-gradient(to top,rgba(181,54,106,.85) 55%,rgba(181,54,106,.18))}
 .ac-ico{font-size:40px;color:#fff;margin-bottom:8px}
 .ac-ttl{font-size:20px;font-weight:900;color:#fff;margin-bottom:5px}
 .ac-sub{font-size:13px;color:rgba(255,255,255,.88);margin-bottom:14px;line-height:1.4}
@@ -390,11 +401,11 @@ ul{list-style:none}
 .g-item:hover img{transform:scale(1.07);filter:brightness(.9)}
 .g-ov{
   position:absolute;inset:0;
-  background:rgba(46,139,122,0);
+  background:rgba(181,54,106,0);
   display:flex;align-items:center;justify-content:center;
   transition:background .3s;
 }
-.g-item:hover .g-ov{background:rgba(46,139,122,.4)}
+.g-item:hover .g-ov{background:rgba(181,54,106,.4)}
 .g-ov-icon{color:#fff;font-size:28px;opacity:0;transition:opacity .3s;font-weight:700}
 .g-item:hover .g-ov-icon{opacity:1}
 .g-caption{
@@ -421,7 +432,7 @@ ul{list-style:none}
    ============================================================ */
 .fw{position:relative;overflow:hidden}
 .fw img{width:100%;height:440px;object-fit:cover;display:block}
-.fw-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(46,139,122,.86) 0%,rgba(0,0,0,.52) 100%);display:flex;align-items:center;justify-content:center;text-align:center}
+.fw-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(181,54,106,.86) 0%,rgba(0,0,0,.52) 100%);display:flex;align-items:center;justify-content:center;text-align:center}
 .fw-txt{color:#fff;padding:24px;max-width:760px}
 .fw-txt h2{font-size:42px;font-weight:900;margin-bottom:12px;line-height:1.1}
 .fw-txt p{font-size:20px;margin-bottom:24px;line-height:1.5;color:rgba(255,255,255,.92)}
@@ -468,11 +479,123 @@ ul{list-style:none}
 .soc-li{background:#0A66C2}
 .soc-wa{background:#25D366}
 .soc-tw{background:#1DA1F2}
+.culture-head {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
+.culture-sec {
+  padding: 50px 0;
+  background: #f9fbfb;
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.culture-card {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.culture-card h4 {
+  margin: 8px 0;
+}
+
+.culture-card:hover {
+  transform: translateY(-4px);
+}
+
+.culture-tagline {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.vision-quote {
+  margin: 25px 0;
+  padding-left: 15px;
+  border-left: 4px solid #2f6f68;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.vision-desc {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.vision-list {
+  display: grid;
+  gap: 12px;
+}
+
+.vision-list div {
+  background: #f5f7f8;
+  padding: 12px 15px;
+  border-radius: 6px;
+}
 /* ============================================================
-   CONTACT
+   LOGO-BG INFO SECTIONS
    ============================================================ */
-.contact-sec{background:#1C2B3A;color:#fff;padding:64px 0}
+.logo-bg-sec{
+  position:relative;padding:72px 0;overflow:hidden;
+}
+.logo-bg-sec::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url('https://static.wixstatic.com/media/ed3891_0bf3bc61c6fa485b8221cc8dd06a6164~mv2.png');
+  background-repeat:no-repeat;background-position:center center;
+  background-size:55%;
+  opacity:0.07;
+  pointer-events:none;z-index:0;
+}
+.logo-bg-sec .container{position:relative;z-index:1}
+.lbs-dark{background:linear-gradient(135deg,#1C2B3A 0%,#2A3D52 100%);color:#fff}
+.lbs-light{background:linear-gradient(135deg,#F0F6F6 0%,#E5EFEF 100%);color:#1C1C1C}
+.lbs-title{font-size:32px;font-weight:900;line-height:1.15;margin-bottom:8px}
+.lbs-dark .lbs-title{color:#fff}
+.lbs-light .lbs-title{color:var(--teal-dark)}
+.lbs-identity{font-size:22px;font-weight:900;font-style:italic;margin:24px 0 32px;padding:16px 24px;border-left:5px solid var(--orange);background:rgba(255,255,255,.07);border-radius:0 8px 8px 0;line-height:1.3}
+.lbs-dark .lbs-identity{color:#fff;background:rgba(255,255,255,.07)}
+.lbs-light .lbs-identity{color:var(--teal-dark);background:rgba(59,110,110,.08)}
+.lbs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.lbs-card{padding:20px;border-radius:8px;transition:transform .25s,box-shadow .25s}
+.lbs-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.15)}
+.lbs-dark .lbs-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12)}
+.lbs-light .lbs-card{background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.07);border:1px solid rgba(59,110,110,.1)}
+.lbs-card-ico{font-size:24px;margin-bottom:8px}
+.lbs-card-title{font-size:15px;font-weight:800;margin-bottom:5px;line-height:1.2}
+.lbs-dark .lbs-card-title{color:#fff}
+.lbs-light .lbs-card-title{color:var(--teal-dark)}
+.lbs-card-desc{font-size:13px;line-height:1.65}
+.lbs-dark .lbs-card-desc{color:rgba(255,255,255,.78)}
+.lbs-light .lbs-card-desc{color:#555}
+.lbs-gain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:28px}
+.lbs-gain{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;border-radius:8px}
+.lbs-dark .lbs-gain{background:rgba(255,255,255,.07)}
+.lbs-light .lbs-gain{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.lbs-gain-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:5px}
+.lbs-power{text-align:center;font-size:21px;font-weight:900;font-style:italic;padding:20px 28px;border-radius:10px;margin-top:8px}
+.lbs-dark .lbs-power{background:rgba(193,123,58,.15);color:var(--orange);border:2px solid rgba(193,123,58,.3)}
+.lbs-light .lbs-power{background:var(--teal);color:#fff}
+@media(max-width:768px){
+  .lbs-grid{grid-template-columns:1fr 1fr}
+  .lbs-gain-grid{grid-template-columns:1fr}
+  .lbs-title{font-size:24px}
+  .logo-bg-sec::before{background-size:90%}
+}
+@media(max-width:500px){
+  .lbs-grid{grid-template-columns:1fr}
+}
+
+.contact-sec{background:#2A1040;color:#fff;padding:64px 0}
 .contact-sec h2{font-size:34px;font-weight:900;margin-bottom:8px}
 .contact-sec>.container>p{font-size:16px;max-width:660px;line-height:1.6;margin-bottom:30px;color:rgba(255,255,255,.75)}
 .c-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
@@ -555,7 +678,15 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   .par-grid,.testi-grid{grid-template-columns:1fr 1fr}
   .gallery-grid{grid-template-columns:repeat(3,1fr)}
 }
-@media(max-width:920px){
+@media(max-width:1180px){
+  .nav-link{padding:0 11px;font-size:13.5px}
+  .h-right .btn{padding:9px 16px;font-size:12px}
+  .logo-wrap img{height:54px}
+  .header-main{height:76px;gap:8px}
+  .nav-link{height:76px}
+  .nav-link::after{bottom:14px}
+}
+@media(max-width:1024px){
   .topbar{height:auto;padding:6px 0}
   .topbar-inner{flex-wrap:wrap;justify-content:center;gap:4px;height:auto;padding:4px 12px}
   .topbar-left{display:none}
@@ -563,6 +694,12 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   .topbar-social{padding:4px 0 2px}
   .desktop-nav{display:none}
   .hamburger{display:flex}
+  .h-right .btn{padding:9px 18px}
+}
+@media(max-width:920px){
+  .h-right .btn{padding:8px 14px;font-size:11.5px;letter-spacing:.4px}
+  .logo-wrap img{height:48px}
+  .header-main{height:68px}
   .hero-slide img{height:400px}
   .hero-hl{font-size:28px}
   .hero-sub{font-size:17px}
@@ -579,6 +716,145 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   .m-stats{gap:20px}
   .fb-card{padding:28px 22px}
   .fb-grid{grid-template-columns:1fr}
+}
+.mission-wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.mission-left h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.mission-highlight {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mission-desc {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.mission-right {
+  display: grid;
+  gap: 12px;
+}
+
+.mission-item {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 16px 18px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mission-item:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateX(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.mi-ico {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.mission-item:hover .mi-ico {
+  background: rgba(255,255,255,0.28);
+  transform: scale(1.05);
+}
+
+.mi-body {
+  min-width: 0;
+  display: block;
+}
+
+.mi-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+}
+
+.mi-desc {
+  display: block;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.5;
+}
+
+.mi-cta {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s, transform 0.25s;
+  flex-shrink: 0;
+}
+
+.mission-item:hover .mi-cta {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .mission-item {
+    grid-template-columns: 46px 1fr;
+    gap: 12px;
+  }
+  .mi-cta {
+    grid-column: 2 / -1;
+    margin-top: 4px;
+  }
+}
+
+/* STATS spacing fix */
+.m-stats {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .mission-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-left h1 {
+    font-size: 26px;
+  }
 }
 @media(max-width:600px){
   .card-grid,.topics-grid{grid-template-columns:1fr}
@@ -632,16 +908,16 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
     <a href="rescue.html">🐾 Rescue &amp; Success Stories</a>
     <a href="#campaigns">#EndAbandonment</a><a href="#campaigns">#StructuredFeeding</a>
     <a href="#campaigns">#HumaneCoexistence</a><a href="#campaigns">#ProtectFeeders</a>
-    <a href="#campaigns">Spay &amp; Neuter Drive</a><a href="#campaigns">All Campaigns</a>
+    <a href="#campaigns">#Spay &amp; Neuter Drive</a><a href="#campaigns">#All Campaigns</a>
   </div>
   <div class="mob-tog" onclick="togSub(this)">Animals ▾</div>
   <div class="mob-sub">
-    <a href="#">🐕 Dogs</a><a href="#">🐈 Cats</a><a href="#">🐄 Cattle</a>
-    <a href="#">🐎 Horses</a><a href="#">🐦 Birds</a><a href="#">🐇 Rabbits</a>
+    <a href="#"> Dogs</a><a href="#"> Cats</a><a href="#"> Cattle</a>
+    <a href="#"> Horses</a><a href="#"> Birds</a><a href="#"> Rabbits</a>
   </div>
   <div class="mob-tog" onclick="togSub(this)">Get Involved ▾</div>
   <div class="mob-sub">
-    <a href="#contact">Donate</a><a href="#contact">Volunteer</a>
+    <a href="#donate">Donate</a><a href="#contact">Volunteer</a>
     <a href="#contact">Report Emergency</a><a href="#contact">GOCAF Academy</a>
   </div>
   <div class="mob-tog" onclick="togSub(this)">About Us ▾</div>
@@ -649,12 +925,12 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
     <a href="#about">About GOCAF</a><a href="#founder">Founder</a>
     <a href="#contact">Contact</a><a href="#">Jobs</a>
   </div>
-  <a class="mob-lk" href="#gallery">📸 Gallery</a>
+  <a class="mob-lk" href="#gallery"> Gallery</a>
   <a class="mob-lk" href="#">Jobs</a><a class="mob-lk" href="#">Press</a>
   <a class="mob-lk" href="#contact">Newsletter</a>
   <div class="mob-btns">
-    <a href="#contact" class="btn btn-orange" style="width:100%;text-align:center">Donate</a>
-    <a href="#contact" class="btn btn-teal" style="width:100%;text-align:center">Volunteer</a>
+    <a href="#donate" class="btn btn-orange" style="width:100%;text-align:center">Donate</a>
+    <a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" class="btn btn-teal" style="width:100%;text-align:center">Volunteer</a>
   </div>
 </div>
 
@@ -666,7 +942,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   <!-- TOP BAR — fixed layout so social icons are always visible -->
   <div class="topbar">
     <div class="container topbar-inner">
-      <span class="topbar-left">🌍 GOCAF International – Hyderabad, Telangana, India</span>
+      <span class="topbar-left"> GOCAF International – Hyderabad, Telangana, India</span>
       <div class="topbar-center">
         <a href="jobs.html">Jobs</a><a href="press.html">Press</a><a href="faq.html">FAQ</a>
         <a href="newsletter.html">Newsletter</a><a href="#contact">Contact</a>
@@ -697,25 +973,114 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   </div>
 
   <!-- MAIN NAV -->
-  <div class="container header-main">
-    <a href="index.html" class="logo-wrap">
-      <img src="https://static.wixstatic.com/media/ed3891_0bf3bc61c6fa485b8221cc8dd06a6164~mv2.png" alt="GOCAF Logo">
-    </a>
-    <nav class="desktop-nav" aria-label="Main Navigation">
+ <!-- ============================================================
+     STEP 1: ADD THIS CSS to your existing <style> block
+     (paste before the closing </style> tag)
+     ============================================================ -->
+<style id="PASTE-INTO-EXISTING-STYLE-BLOCK">
+/* Project cards in mega menu */
+.proj-card{display:block;padding:14px;border-radius:8px;border:1.5px solid #eee;transition:all .22s;cursor:pointer;background:#fff;text-decoration:none}
+.proj-card:hover{border-color:var(--teal);background:var(--teal-light);transform:translateY(-2px);box-shadow:0 4px 16px rgba(181,54,106,.15)}
+.proj-icon{font-size:28px;margin-bottom:8px;line-height:1}
+.proj-card-name{font-size:16px;font-weight:900;color:var(--black);margin-bottom:3px}
+.proj-card:hover .proj-card-name{color:var(--teal)}
+.proj-card-full{font-size:11px;color:#888;line-height:1.4;margin-bottom:6px}
+.proj-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:10px;margin-top:4px;color:#fff}
+.badge-save{background:#1a6b8a}
+.badge-care{background:#27ae60}
+.badge-safeabc{background:#d35400}
+.badge-shield{background:#8e44ad}
+.badge-careplus{background:#b5366a}
+.mega-proj-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:8px 0}
+.mega-view-all{display:block;text-align:center;margin-top:14px;font-size:13px;font-weight:700;color:var(--teal);text-decoration:none}
+.mega-view-all:hover{text-decoration:underline}
+@media(max-width:1000px){.mega-proj-wrap{grid-template-columns:repeat(3,1fr)}}
+</style>
 
-      <!-- Campaigns & Topics -->
+
+<!-- MAIN NAV ROW -->
+<div class="container header-main">
+
+  <a href="index.html" class="logo-wrap" aria-label="GOCAF Home">
+    <img src="https://static.wixstatic.com/media/ed3891_0bf3bc61c6fa485b8221cc8dd06a6164~mv2.png" alt="GOCAF">
+  </a>
+
+  <nav class="desktop-nav" aria-label="Primary">
+
+    <div class="nav-item">
+      <span class="nav-link">Projects <span class="nav-arr">▾</span></span>
+  <div class="mega">
+    <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+      <div style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;border-bottom:2px solid var(--teal-light);padding-bottom:6px">Our 5 Core Programmes</div>
+      <div class="mega-proj-wrap">
+
+        <a class="proj-card" href="save.html">
+          <div class="proj-icon">🐾</div>
+          <div class="proj-card-name">SAVE</div>
+          <div class="proj-card-full">Stray Animal Verification &amp; Enforcement</div>
+          <span class="proj-badge badge-save">Identity &amp; Tracking</span>
+        </a>
+
+        <a class="proj-card" href="care.html">
+          <div class="proj-icon">🏥</div>
+          <div class="proj-card-name">CARE</div>
+          <div class="proj-card-full">Capture, Assess, Rehabilitate &amp; Empower</div>
+          <span class="proj-badge badge-care">Rehabilitation &amp; Recovery</span>
+        </a>
+
+        <a class="proj-card" href="safeabc.html">
+          <div class="proj-icon">✂️</div>
+          <div class="proj-card-name">SAFE-ABC</div>
+          <div class="proj-card-full">Systematic Animal Fertility Enforcement – ABC</div>
+          <span class="proj-badge badge-safeabc">Population Control</span>
+        </a>
+
+        <a class="proj-card" href="shield.html">
+          <div class="proj-icon">🛡️</div>
+          <div class="proj-card-name">SHIELD</div>
+          <div class="proj-card-full">Safety, Harmony &amp; Incident Elimination for Lasting Defence</div>
+          <span class="proj-badge badge-shield">Community Safety</span>
+        </a>
+
+        <a class="proj-card" href="careplus.html">
+          <div class="proj-icon">🏠</div>
+          <div class="proj-card-name">CARE+</div>
+          <div class="proj-card-full">Community Animal Rescue &amp; Extended Protection</div>
+          <span class="proj-badge badge-careplus">Shelter &amp; Protection</span>
+        </a>
+
+      </div>
+      <!-- <a class="mega-view-all" href="projects.html">View All Projects →</a> -->
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     STEP 3: REPLACE your existing mobile Projects section 
+     in the mob-sub with this
+     ============================================================ -->
+<!-- <div class="mob-tog" onclick="togSub(this)">Projects ▾</div>
+<div class="mob-sub">
+  <a href="save.html">🐾 SAVE – Identity &amp; Tracking</a>
+  <a href="care.html">🏥 CARE – Rehabilitation &amp; Recovery</a>
+  <a href="safeabc.html">✂️ SAFE-ABC – Population Control</a>
+  <a href="shield.html">🛡️ SHIELD – Community Safety</a>
+  <a href="careplus.html">🏠 CARE+ – Shelter &amp; Protection</a>
+</div> -->
       <div class="nav-item">
         <span class="nav-link">Campaigns &amp; Topics <span class="nav-arr">▾</span></span>
         <div class="mega"><div class="mega-wrap m4">
           <div>
             <div class="mega-hd"><a href="#campaigns">Campaigns</a></div>
+            <a class="ml" href="#campaigns">#NoProof-NoCatch</a>
             <a class="ml" href="#campaigns">#EndAbandonment</a>
             <a class="ml" href="#campaigns">#StructuredFeeding</a>
             <a class="ml" href="#campaigns">#HumaneCoexistence</a>
             <a class="ml" href="#campaigns">#ProtectFeeders</a>
-            <a class="ml" href="#campaigns">Spay &amp; Neuter Drive</a>
-            <a class="ml" href="#campaigns">Anti-Cruelty Campaign</a>
-            <a class="ml" href="#campaigns">Stray Animal Welfare</a>
+            <a class="ml" href="#campaigns">#Spay &amp; Neuter Drive</a>
+            <a class="ml" href="#campaigns">#Anti-Cruelty Campaign</a>
+            <a class="ml" href="#campaigns">#Stray Animal Welfare</a>
             <a class="ml" href="#campaigns">#GOCAF4Animals</a>
           </div>
           <div>
@@ -727,20 +1092,20 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
             <a class="ml" href="#">Stray Animal Management</a>
             <a class="ml" href="#">Climate &amp; Animal Welfare</a>
             <a class="ml" href="#">Companion Animals</a>
-            <a class="ml" href="#">Technology &amp; Data</a>
+            <!-- <a class="ml" href="#">Technology &amp; Data</a> -->
           </div>
           <div>
             <div class="mega-hd"><a href="#">Shelters &amp; Centres</a></div>
             <a class="ml" href="#">GOCAF Rescue Centre – Hyderabad</a>
             <a class="ml" href="#">Community Shelter Network</a>
             <a class="ml" href="#">Foster Care Programme</a>
-            <a class="ml" href="#">Spay-Neuter Clinics</a>
+            <!-- <a class="ml" href="#">Spay-Neuter Clinics</a>
             <a class="ml" href="#">Partner Shelters</a>
-            <a class="ml" href="#">Emergency Shelter Services</a>
+            <a class="ml" href="#">Emergency Shelter Services</a> -->
           </div>
           <div>
             <div class="mega-hd">More to Know</div>
-            <a class="ml" href="rescue.html">🐾 Rescue &amp; Success Stories</a>
+            <a class="ml" href="rescue.html"> Rescue &amp; Success Stories</a>
             <a class="ml" href="#">Publications &amp; Guides</a>
             <a class="ml" href="#">Blog &amp; News</a>
             <a class="ml" href="#">Awareness Resources</a>
@@ -750,15 +1115,15 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       </div>
 
       <!-- Animals -->
-      <div class="nav-item">
+      <!-- <div class="nav-item">
         <span class="nav-link">Animals <span class="nav-arr">▾</span></span>
         <div class="mega"><div class="mega-wrap m4">
-          <div><a class="ml" href="#">🐕 Dogs</a><a class="ml" href="#">🐈 Cats</a><a class="ml" href="#">🐄 Cattle</a></div>
-          <div><a class="ml" href="#">🐎 Horses</a><a class="ml" href="#">🐖 Pigs</a><a class="ml" href="#">🐐 Goats</a></div>
-          <div><a class="ml" href="#">🐑 Sheep</a><a class="ml" href="#">🐦 Birds</a><a class="ml" href="#">🐇 Rabbits</a></div>
-          <div><a class="ml" href="#">🐀 Mice &amp; Rats</a><a class="ml" href="#">🐍 Snakes &amp; Reptiles</a><a class="ml" href="#">Other Animals</a></div>
+          <div><a class="ml" href="#"> Dogs</a><a class="ml" href="#"> Cats</a><a class="ml" href="#"> Cattle</a></div>
+          <div><a class="ml" href="#"> Horses</a><a class="ml" href="#"> Pigs</a><a class="ml" href="#"> Goats</a></div>
+          <div><a class="ml" href="#"> Sheep</a><a class="ml" href="#"> Birds</a><a class="ml" href="#"> Rabbits</a></div>
+          <div><a class="ml" href="#"> Mice &amp; Rats</a><a class="ml" href="#"> Snakes &amp; Reptiles</a><a class="ml" href="#">Other Animals</a></div>
         </div></div>
-      </div>
+      </div> -->
 
       <!-- Get Involved -->
       <div class="nav-item">
@@ -766,20 +1131,20 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
         <div class="mega"><div class="mega-wrap m2">
           <div>
             <div class="mega-hd">Take Action</div>
-            <a class="ml" href="#contact">❤️ Donate</a>
-            <a class="ml" href="#contact">🙋 Volunteer</a>
-            <a class="ml" href="#contact">✍️ Petitions &amp; Sign</a>
-            <a class="ml" href="tel:+919390189589">🚨 Report Animal Emergency</a>
-            <a class="ml" href="#contact">💌 Leave a Gift in Your Will</a>
-            <a class="ml" href="#contact">🗓️ Events &amp; Webinars</a>
+            <a class="ml" href="#donate"> Donate</a>
+            <a class="ml" href="#contact"> Volunteer</a>
+            <a class="ml" href="#contact"> Petitions &amp; Sign</a>
+            <a class="ml" href="tel:+919390189589"> Report Animal Emergency</a>
+            <a class="ml" href="#contact"> Leave a Gift in Your Will</a>
+            <a class="ml" href="#contact"> Events &amp; Webinars</a>
           </div>
           <div>
             <div class="mega-hd">More Ways to Help</div>
             <a class="ml" href="#contact">Animal Welfare in Practice</a>
-            <a class="ml" href="#contact">⭐ Become an Ambassador</a>
-            <a class="ml" href="#contact">🤝 Partner with GOCAF</a>
+            <a class="ml" href="#contact"> Become an Ambassador</a>
+            <a class="ml" href="#contact"> Partner with GOCAF</a>
             <a class="ml" href="#contact">Corporate CSR</a>
-            <a class="ml" href="#contact">📚 GOCAF Academy – Free Training</a>
+            <a class="ml" href="#contact">GOCAF Academy – Free Training</a>
           </div>
         </div></div>
       </div>
@@ -795,6 +1160,8 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
             <a class="ml" href="#contact">Contact Us</a>
             <a class="ml" href="#">GOCAF City Offices</a>
             <a class="ml" href="#">Policies &amp; Standards</a>
+            <a class="ml" href="#contact">Culture</a>
+            <a class="ml" href="#contact">Value</a>
           </div>
           <div>
             <div class="mega-hd">Media &amp; Reports</div>
@@ -802,7 +1169,10 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
             <a class="ml" href="#">FAQs</a>
             <a class="ml" href="#">Annual Report</a>
             <a class="ml" href="#">Press Releases</a>
-            <a class="ml" href="#contact">Newsletter Signup</a>
+            <a class="ml" href="#contact">Mission</a>
+            <a class="ml" href="#contact">Vision</a>
+            
+            
           </div>
         </div></div>
       </div>
@@ -823,19 +1193,291 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
         </div>
       </div>
 
-    </nav>
-    <div class="h-right">
-      <button class="search-btn" onclick="openSearch()" aria-label="Search">
-        <svg viewBox="0 0 64 64"><path d="M45.8,25.8c0,11-8.9,20-20,20-11,0-20-8.9-20-20s8.9-20,20-20C36.8,5.8,45.8,14.7,45.8,25.8M48.1,38.7c2.2-3.8,3.5-8.2,3.5-12.9C51.6,11.5,40,0,25.8,0,11.5,0,0,11.5,0,25.8,0,40,11.5,51.6,25.8,51.6c4.7,0,9.1-1.3,12.9-3.5L54.6,64l9.4-9.4z"/></svg>
-      </button>
-      <a href="#contact" class="btn btn-orange">Donate</a>
-      <a href="#contact" class="btn btn-teal">Volunteer</a>
+      <!-- Partner with Us -->
+      <div class="nav-item">
+        <a href="#partner" class="nav-link">Partner with Us</a>
+      </div>
+      <a href="#donate" class="btn btn-orange">Donate</a>
+      <a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" class="btn btn-teal">Volunteer</a>
       <button class="hamburger" onclick="openMob()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
+
+<!-- ================================================================
+     SERVICE TICKER BANNER (sticky, below header)
+     ================================================================ -->
+<style>
+/* ---- TICKER WRAPPER ---- */
+.service-ticker{
+  position:sticky;
+  top:120px; /* updated dynamically by JS below */
+  z-index:2900;
+  background:linear-gradient(90deg,#ab1a1a 0%,#ac2121 45%,#3a0303 100%);
+  overflow:hidden;
+  height:48px;
+  display:flex;
+  align-items:center;
+  box-shadow:0 4px 18px rgba(152, 181, 48, 0.45);
+}
+
+/* decorative left cap */
+
+
+/* scrolling track */
+.ticker-track{
+  display:flex;
+  white-space:nowrap;
+  animation:tickerScroll 28s linear infinite;
+  align-items:center;
+}
+.service-ticker:hover .ticker-track{
+  animation-play-state:paused;
+}
+
+/* each item */
+.ticker-item{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:0 40px;
+  color:#ffffff;
+  font-size:15px;
+  font-weight:700;
+  font-family:'Roboto',sans-serif;
+  letter-spacing:.3px;
+  cursor:pointer;
+  transition:color .2s;
+  text-decoration:none;
+}
+.ticker-item:hover{color:#FFD6EC;}
+
+.ticker-icon{
+  font-size:20px;
+  line-height:1;
+  flex-shrink:0;
+}
+
+.ticker-label{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+}
+.ticker-main{
+  font-size:14px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  color:#fff;
+}
+.ticker-sub{
+  font-size:11px;
+  font-weight:400;
+  color:rgba(255,255,255,.75);
+  letter-spacing:.2px;
+  text-transform:none;
+}
+
+/* separator dot */
+.ticker-sep{
+  color:rgba(255,255,255,.35);
+  font-size:20px;
+  flex-shrink:0;
+  user-select:none;
+}
+
+@keyframes tickerScroll{
+  0%  { transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+
+/* ============================================================
+   ECOSYSTEM SECTION
+   ============================================================ */
+.ecosystem-sec{
+  background:linear-gradient(180deg,#f2eaf8 0%,#fff 100%);
+  padding:80px 0 72px;position:relative;overflow:hidden;
+}
+.ecosystem-sec::before{
+  content:'';position:absolute;right:-120px;top:-120px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(181,54,106,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.ecosystem-sec::after{
+  content:'';position:absolute;left:-80px;bottom:-80px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(107,63,160,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.eco-eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.2px;color:var(--teal);background:var(--teal-light);
+  padding:5px 16px;border-radius:20px;margin-bottom:14px;
+}
+.eco-tagline{
+  display:flex;justify-content:center;gap:4px;flex-wrap:wrap;
+  font-size:20px;font-weight:900;margin-bottom:44px;
+}
+.eco-tagline span{padding:0 3px}
+.eco-tagline span:nth-child(1){color:#d35400}
+.eco-tagline span:nth-child(2){color:#27ae60}
+.eco-tagline span:nth-child(3){color:#1a7bbf}
+.eco-tagline span:nth-child(4){color:#8e44ad}
+
+/* Two-column layout: content left, image right */
+.eco-layout{
+  display:grid;
+  grid-template-columns:1fr 460px;
+  gap:44px;
+  align-items:start;
+  max-width:1140px;
+  margin:0 auto;
+}
+.eco-img-wrap{
+  position:relative;z-index:1;
+  background:#fff;border-radius:16px;
+  box-shadow:0 16px 48px rgba(0,0,0,.12),0 4px 14px rgba(0,0,0,.07);
+  overflow:hidden;flex-shrink:0;
+}
+.eco-img-wrap img{width:100%;height:auto;display:block;}
+
+/* Left column (content) */
+.eco-right{display:flex;flex-direction:column;gap:20px}
+.eco-intro-para{
+  font-size:15px;line-height:1.7;color:#444;
+  background:#fff;border-radius:10px;padding:16px 18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);border-left:3px solid #B5366A;
+  margin-bottom:4px;
+}
+.eco-why-title{
+  font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--teal);border-bottom:2px solid var(--teal-light);padding-bottom:10px;margin-bottom:4px;
+}
+.eco-why-list{display:flex;flex-direction:column;gap:12px}
+.eco-why-row{
+  display:flex;align-items:flex-start;gap:14px;
+  background:#fff;border-radius:10px;padding:14px 16px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  border-left:3px solid var(--teal);
+  transition:transform .2s;
+}
+.eco-why-row:hover{transform:translateX(4px)}
+.eco-why-ico{font-size:22px;flex-shrink:0;margin-top:1px}
+.eco-why-txt{font-size:14px;font-weight:700;color:var(--black);line-height:1.5}
+
+/* Partner strip below right column */
+.eco-partner-strip{
+  background:var(--grad);border-radius:12px;
+  padding:18px 22px;
+}
+.eco-partner-left h4{font-size:15px;font-weight:900;color:#fff;margin-bottom:4px}
+.eco-partner-left p{font-size:12px;color:rgba(255,255,255,.8);margin-bottom:14px}
+.eco-partner-actions{display:flex;gap:8px;flex-wrap:wrap}
+.eco-partner-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 14px;border-radius:6px;font-size:12px;font-weight:700;
+  color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);
+  transition:all .2s;cursor:pointer;
+}
+.eco-partner-btn:hover{background:rgba(255,255,255,.32);color:#fff}
+
+@media(max-width:1100px){
+  .eco-layout{grid-template-columns:1fr 400px;gap:32px}
+}
+@media(max-width:880px){
+  .eco-layout{grid-template-columns:1fr;gap:32px}
+  .eco-img-wrap{max-width:560px;margin:0 auto}
+}
+@media(max-width:600px){
+  .ecosystem-sec{padding:56px 0 52px}
+  .eco-tagline{font-size:17px}
+  .eco-img-wrap{max-width:100%}
+}
+</style>
+
+<div class="service-ticker" role="marquee" aria-label="GOCAF Services">
+  <!-- Duplicate items so the scroll loops seamlessly -->
+  <div class="ticker-track" id="tickerTrack">
+
+    <!-- SET 1 -->
+    <a href="#contact" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">Book Temporary Shelter</span>
+        <span class="ticker-sub">Safe haven for strays in need</span>
+      </span>
+    </a>
+    <span class="ticker-sep">◆</span>
+
+    <a href="#save" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">Get Your Stray Registered</span>
+        <span class="ticker-sub">Save your pets / track them</span>
+      </span>
+    </a>
+    <span class="ticker-sep">◆</span>
+
+    <a href="#contact" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">Book Stray Health Checkup</span>
+        <span class="ticker-sub">Prevention is better than cure</span>
+      </span>
+    </a>
+    <span class="ticker-sep">◆</span>
+
+    <a href="#abc" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">ABC Support</span>
+        <span class="ticker-sub">Animal Birth Control Programme</span>
+      </span>
+    </a>
+    <span class="ticker-sep">◆</span>
+
+    <!-- SET 2 — exact duplicate for seamless loop -->
+    <a href="#contact" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">Book Temporary Shelter</span>
+        <span class="ticker-sub">Safe haven for strays in need</span>
+      </span>
+    </a>
+    <span class="ticker-sep"></span>
+
+    <a href="#save" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">Get Your Stray Registered</span>
+        <span class="ticker-sub">Save your pets / track them</span>
+      </span>
+    </a>
+    <span class="ticker-sep"></span>
+
+    <a href="#contact" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">Book Stray Health Checkup</span>
+        <span class="ticker-sub">Prevention is better than cure</span>
+      </span>
+    </a>
+    <span class="ticker-sep">◆</span>
+
+    <a href="#abc" class="ticker-item">
+      <span class="ticker-icon"></span>
+      <span class="ticker-label">
+        <span class="ticker-main">ABC Support</span>
+        <span class="ticker-sub">Animal Birth Control Programme</span>
+      </span>
+    </a>
+    <span class="ticker-sep">◆</span>
+
+  </div>
+</div>
 
 <!-- ================================================================
      HERO
@@ -846,7 +1488,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1920&h=700&fit=crop" alt="Community animals" loading="eager">
       <div class="hero-dk"></div>
       <div class="hero-cap">
-        <div class="hero-badge">🌍 Global Initiative – India</div>
+        <div class="hero-badge"> Global Initiative – India</div>
         <h1 class="hero-hl">Transforming Animal Welfare<br>Through Structure &amp; Compassion</h1>
         <p class="hero-sub">Building humane cities where people and community animals thrive together</p>
         <div class="hero-btns">
@@ -859,7 +1501,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <img src="https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress&cs=tinysrgb&w=1920&h=700&fit=crop" alt="Dog rescue" loading="lazy">
       <div class="hero-dk"></div>
       <div class="hero-cap">
-        <div class="hero-badge">🐾 Our Mission</div>
+        <div class="hero-badge"> Our Mission</div>
         <h2 class="hero-hl">We Don't React to Cruelty.<br>We Prevent It.</h2>
         <p class="hero-sub">Through structured, lawful, and compassionate systems across India</p>
         <div class="hero-btns">
@@ -872,11 +1514,11 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <img src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1920&h=700&fit=crop" alt="Stray animals" loading="lazy">
       <div class="hero-dk"></div>
       <div class="hero-cap">
-        <div class="hero-badge">💚 Zero Abandonment</div>
+        <div class="hero-badge"> Zero Abandonment</div>
         <h2 class="hero-hl">No Animal Left Behind.<br>No Feeder Stands Alone.</h2>
         <p class="hero-sub">No society left confused. No law violated. Structured welfare for all.</p>
         <div class="hero-btns">
-          <a href="https://wa.me/919390189589" target="_blank" class="btn btn-orange btn-lg">💬 Join GOCAF on WhatsApp</a>
+          <a href="https://wa.me/919390189589" target="_blank" class="btn btn-orange btn-lg"> Join GOCAF on WhatsApp</a>
         </div>
       </div>
     </div>
@@ -884,12 +1526,12 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <img src="https://images.pexels.com/photos/1350591/pexels-photo-1350591.jpeg?auto=compress&cs=tinysrgb&w=1920&h=700&fit=crop" alt="Volunteers" loading="lazy">
       <div class="hero-dk"></div>
       <div class="hero-cap">
-        <div class="hero-badge">⭐ Be the Change</div>
+        <div class="hero-badge"> Be the Change</div>
         <h2 class="hero-hl">Every Animal Deserves<br>Safety &amp; Dignity</h2>
         <p class="hero-sub">Supported by structured, lawful, and compassionate human systems</p>
         <div class="hero-btns">
           <a href="#vision" class="btn btn-white btn-lg">Our Vision</a>
-          <a href="#contact" class="btn btn-orange btn-lg">Volunteer Now</a>
+          <a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" class="btn btn-orange btn-lg">Volunteer Now</a>
         </div>
       </div>
     </div>
@@ -904,17 +1546,196 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   </div>
 </section>
 
-<!-- MISSION BAND -->
-<div class="mission-band" id="about">
-  <h1>GOCAF – Global Organization For Community Animal Freedom Foundation</h1>
-  <p>We bring together feeders, societies, volunteers, veterinarians, governments, and technology to create a <strong>structured, lawful, and compassionate animal welfare ecosystem</strong> — at the intersection of law, compassion, public health, and community harmony.</p>
-  <div class="m-stats">
-    <div class="mstat"><div class="mstat-num">500+</div><div class="mstat-lbl">Animals Sterilised</div></div>
-    <div class="mstat"><div class="mstat-num">12+</div><div class="mstat-lbl">Cities Partnered</div></div>
-    <div class="mstat"><div class="mstat-num">1000+</div><div class="mstat-lbl">Signatures Collected</div></div>
-    <div class="mstat"><div class="mstat-num">24/7</div><div class="mstat-lbl">Emergency Response</div></div>
+<!-- ECOSYSTEM -->
+<section class="ecosystem-sec" id="ecosystem">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eco-eyebrow">5 Integrated Programs</div>
+      <h2 class="sec-title">The GOCAF Ecosystem</h2>
+      <p class="sec-sub">A complete, integrated &amp; humane approach to community animal welfare — from identification to shelter and protection.</p>
+    </div>
+    <div class="eco-tagline">
+      <span>Identify.</span>
+      <span>Treat.</span>
+      <span>Stabilize.</span>
+      <span>Protect.</span>
+    </div>
+    <!-- Two-column: content left, infographic right -->
+    <div class="eco-layout">
+      <!-- LEFT: Why it matters + program highlights + partner strip -->
+      <div class="eco-right">
+        <p class="eco-why-title">Why This Ecosystem Matters</p>
+        <p class="eco-intro-para">India has over 35 million stray animals suffering from disease, injury, and hunger. GOCAF's five-program ecosystem addresses every stage — from first rescue to permanent protection — through science-backed, humane, and community-led action.</p>
+        <div class="eco-why-list">
+          <div class="eco-why-row">
+            <div class="eco-why-ico"></div>
+            <div class="eco-why-txt"><strong>End-to-end solution</strong> for community animal welfare — no program works in isolation</div>
+          </div>
+          <div class="eco-why-row">
+            <div class="eco-why-ico"></div>
+            <div class="eco-why-txt"><strong>Reduces stray population</strong> humanely &amp; sustainably through ABC/TNR methods</div>
+          </div>
+          <div class="eco-why-row">
+            <div class="eco-why-ico"></div>
+            <div class="eco-why-txt"><strong>Improves animal health &amp; lifespan</strong> — vaccination, treatment &amp; rehabilitation</div>
+          </div>
+          <div class="eco-why-row">
+            <div class="eco-why-ico"></div>
+            <div class="eco-why-txt"><strong>Safer communities</strong> &amp; better human-animal coexistence across neighbourhoods</div>
+          </div>
+          <div class="eco-why-row">
+            <div class="eco-why-ico"></div>
+            <div class="eco-why-txt"><strong>Data-driven &amp; transparent</strong> — every animal tracked with a unique QR-tagged digital profile</div>
+          </div>
+          <div class="eco-why-row">
+            <div class="eco-why-ico"></div>
+            <div class="eco-why-txt"><strong>Sustainable impact</strong> for people, animals &amp; the environment — now &amp; for generations ahead</div>
+          </div>
+        </div>
+        <!-- Partner with GOCAF -->
+        <div class="eco-partner-strip">
+          <div class="eco-partner-left">
+            <h4>Partner with GOCAF</h4>
+            <p>Your support creates a ripple of compassion that transforms lives across communities.</p>
+          </div>
+          <div class="eco-partner-actions">
+            <a href="#contact" class="eco-partner-btn"> Fund a Program</a>
+            <a href="#contact" class="eco-partner-btn"> CSR Partnership</a>
+            <a href="#contact" class="eco-partner-btn"> Community Collaboration</a>
+            <a href="#contact" class="eco-partner-btn"> Sponsor a Life</a>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: ecosystem diagram -->
+      <div class="eco-img-wrap">
+        <img src="ecosystem.jpeg" alt="GOCAF Ecosystem — SAVE, CARE, SAFE-ABC, SHIELD, CARE+">
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- MISSION BAND -->
+<section class="mission-band" id="about">
+
+  <div class="container mission-wrap">
+
+    <!-- LEFT SIDE -->
+    <div class="mission-left">
+      <h1>
+        GOCAF – Global Organization For Community Animal Freedom Foundation
+      </h1>
+
+      <p class="mission-highlight">
+        To create a cruelty-free society where community animals live with dignity, safety, and freedom.
+      </p>
+
+      <p class="mission-desc">
+        We bring together feeders, societies, volunteers, veterinarians, governments, and technology to create a 
+        <strong>structured, lawful, and compassionate animal welfare ecosystem</strong>.
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="mission-right">
+
+      <a href="#campaigns" class="mission-item">
+        <span class="mi-ico">🛡️</span>
+        <span class="mi-body">
+          <span class="mi-title">Prevent Cruelty Through Legal Enforcement</span>
+          <span class="mi-desc">Taking structured action against abuse with legal support, reporting systems, and accountability.</span>
+        </span>
+        <span class="mi-cta">Learn More →</span>
+      </a>
+
+      <a href="save.html" class="mission-item">
+        <span class="mi-ico">🐾</span>
+        <span class="mi-body">
+          <span class="mi-title">Protect Rights of Community Animals</span>
+          <span class="mi-desc">Ensuring every community animal is treated ethically, lawfully, and with dignity.</span>
+        </span>
+        <span class="mi-cta">Learn More →</span>
+      </a>
+
+      <a href="#contact" class="mission-item">
+        <span class="mi-ico">🤝</span>
+        <span class="mi-body">
+          <span class="mi-title">Empower Feeders &amp; Rescuers</span>
+          <span class="mi-desc">Supporting on-ground caregivers with tools, recognition, and a structured ecosystem.</span>
+        </span>
+        <span class="mi-cta">Learn More →</span>
+      </a>
+
+      <a href="safeabc.html" class="mission-item">
+        <span class="mi-ico">💉</span>
+        <span class="mi-body">
+          <span class="mi-title">Promote ABC &amp; Vaccination</span>
+          <span class="mi-desc">Driving humane population control and disease prevention through sterilization and vaccination programs.</span>
+        </span>
+        <span class="mi-cta">Learn More →</span>
+      </a>
+
+      <a href="#campaigns" class="mission-item">
+        <span class="mi-ico">📢</span>
+        <span class="mi-body">
+          <span class="mi-title">Build Awareness &amp; Responsibility</span>
+          <span class="mi-desc">Educating communities to foster coexistence, responsibility, and long-term change.</span>
+        </span>
+        <span class="mi-cta">Learn More →</span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- STATS -->
+  <div class="m-stats">
+    <div class="mstat">
+      <div class="mstat-num">100+</div>
+      <div class="mstat-lbl">Animals Sterilised</div>
+    </div>
+
+    <div class="mstat">
+      <div class="mstat-num">4+</div>
+      <div class="mstat-lbl">Cities Partnered</div>
+    </div>
+
+    <div class="mstat">
+      <div class="mstat-num">600+</div>
+      <div class="mstat-lbl">Signatures Collected</div>
+    </div>
+
+    <div class="mstat">
+      <div class="mstat-num">7/11</div>
+      <div class="mstat-lbl">Emergency Response</div>
+    </div>
+  </div>
+
+</section>
+
+  <!-- Stats -->
+  <!-- <div class="m-stats">
+    <div class="mstat">
+      <div class="mstat-num">500+</div>
+      <div class="mstat-lbl">Animals Sterilised</div>
+    </div>
+
+    <div class="mstat">
+      <div class="mstat-num">12+</div>
+      <div class="mstat-lbl">Cities Partnered</div>
+    </div>
+
+    <div class="mstat">
+      <div class="mstat-num">1000+</div>
+      <div class="mstat-lbl">Signatures Collected</div>
+    </div>
+
+    <div class="mstat">
+      <div class="mstat-num">24/7</div>
+      <div class="mstat-lbl">Emergency Response</div>
+    </div>
+  </div>
+
+</div> -->
 
 <!-- RECENT UPDATES -->
 <section class="news-sec" id="updates">
@@ -960,7 +1781,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <strong>Share Your Experience with GOCAF</strong>
       <span>Your story inspires others — only approved testimonials appear publicly</span>
     </div>
-    <button class="fb-trigger-btn" onclick="openFbModal()">Write a Testimonial ✍️</button>
+    <button class="fb-trigger-btn" onclick="openFbModal()">Write a Testimonial </button>
   </div>
 </div>
 
@@ -1007,22 +1828,22 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
     <div class="camp-grid">
       <!-- #NoProofNoCatch Campaign -->
       <div class="cc nopnc-card"><div class="cc-img" style="position:relative"><img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="No Proof No Catch" loading="lazy"><div style="position:absolute;inset:0;background:rgba(139,0,0,.72);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px"><div style="font-size:13px;font-weight:700;color:#FFD700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">GOCAF Campaign</div><div style="font-size:26px;font-weight:900;color:#fff;line-height:1.1">#No Proof,<br>No Catch</div><div style="font-size:11px;color:rgba(255,255,255,.85);margin-top:8px;font-weight:600">FEEDERS DEMAND: WE NEED PROOF TO CATCH</div></div></div>
-        <div class="cc-body"><span class="cc-tag" style="background:#8B0000">#NoProofNoCatch</span><h3>Stop Illegal Catching — We Demand Proof Before Any Catch</h3><p>Catching community animals is ONLY legal in 4 cases under AWBI &amp; ABC Rules: Rabies suspected/confirmed · Severe illness/injury · Repeated unprovoked aggression · As per AWBI &amp; ABC Rules. False complaints hurt animals and misuse the law. <strong>No Proof = No Catch.</strong></p><div class="cc-stats"><span>⚖️ AWBI &amp; ABC Rules</span><span>🚫 No Proof = No Catch</span><span>📋 3 Types of Proof Required</span></div>
-        <div style="background:#FFF5F5;border-left:3px solid #8B0000;padding:10px 12px;border-radius:4px;margin-bottom:12px;font-size:12px;line-height:1.8;color:#333"><strong style="color:#8B0000">Legal Proofs Required:</strong><br>1. 🎥 Proof of Aggression — clear video, date/time/location<br>2. 🦠 Proof of Rabies — excessive drooling, sudden aggression, disorientation<br>3. 🏥 Medical/Injury Proof — bite photos, doctor report, vaccination record</div>
+        <div class="cc-body"><span class="cc-tag" style="background:#8B0000">#NoProofNoCatch</span><h3>Stop Illegal Catching — We Demand Proof Before Any Catch</h3><p>Catching community animals is ONLY legal in 4 cases under AWBI &amp; ABC Rules: Rabies suspected/confirmed · Severe illness/injury · Repeated unprovoked aggression · As per AWBI &amp; ABC Rules. False complaints hurt animals and misuse the law. <strong>No Proof = No Catch.</strong></p><div class="cc-stats"><span> AWBI &amp; ABC Rules</span><span> No Proof = No Catch</span><span> 3 Types of Proof Required</span></div>
+        <div style="background:#FFF5F5;border-left:3px solid #8B0000;padding:10px 12px;border-radius:4px;margin-bottom:12px;font-size:12px;line-height:1.8;color:#333"><strong style="color:#8B0000">Legal Proofs Required:</strong><br>1.  Proof of Aggression — clear video, date/time/location<br>2.  Proof of Rabies — excessive drooling, sudden aggression, disorientation<br>3.  Medical/Injury Proof — bite photos, doctor report, vaccination record</div>
         <a href="#" style="color:#8B0000;font-weight:700;font-size:13px">Read Full Campaign → Raise a Voice. Save Lives. Be the Change.</a></div></div>
       <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
-        <div class="cc-body"><span class="cc-tag ct2">#EndAbandonment</span><h3>Ending Animal Abandonment in Indian Cities</h3><p>GOCAF's zero-abandonment framework works with housing societies and authorities to create support systems so no owner needs to abandon their animal.</p><div class="cc-stats"><span>🏙️ 14 Zones Active</span><span>🐾 200+ Animals Supported</span></div><a href="rescue.html">Read Campaign Stories →</a></div></div>
+        <div class="cc-body"><span class="cc-tag ct2">#EndAbandonment</span><h3>Ending Animal Abandonment in Indian Cities</h3><p>GOCAF's zero-abandonment framework works with housing societies and authorities to create support systems so no owner needs to abandon their animal.</p><div class="cc-stats"><span>14 Zones Active</span><span> 200+ Animals Supported</span></div><a href="rescue.html">Read Campaign Stories →</a></div></div>
       <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
-        <div class="cc-body"><span class="cc-tag ct2">#StructuredFeeding</span><h3>Creating Safe, Legal Feeding Zones Across Hyderabad</h3><p>We map every feeding spot, register every feeder, and ensure no animal goes hungry in our zones. 38 registered feeders feeding 200+ animals daily.</p><div class="cc-stats"><span>🍽️ 38 Registered Feeders</span><span>🐕 200 Animals Fed Daily</span></div><a href="#">Learn More →</a></div></div>
+        <div class="cc-body"><span class="cc-tag ct2">#StructuredFeeding</span><h3>Creating Safe, Legal Feeding Zones Across Hyderabad</h3><p>We map every feeding spot, register every feeder, and ensure no animal goes hungry in our zones. 38 registered feeders feeding 200+ animals daily.</p><div class="cc-stats"><span> 38 Registered Feeders</span><span> 200 Animals Fed Daily</span></div><a href="#">Learn More →</a></div></div>
       <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/3299905/pexels-photo-3299905.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
-        <div class="cc-body"><span class="cc-tag ct3">#HumaneCoexistence</span><h3>Resolving Human-Animal Conflict Through Dialogue</h3><p>GOCAF mediates disputes, runs awareness programmes in RWAs and schools — replacing fear with understanding and confrontation with governance.</p><div class="cc-stats"><span>🤝 150+ Conflicts Resolved</span><span>🏘️ 40+ RWAs Engaged</span></div><a href="#">Learn More →</a></div></div>
+        <div class="cc-body"><span class="cc-tag ct3">#HumaneCoexistence</span><h3>Resolving Human-Animal Conflict Through Dialogue</h3><p>GOCAF mediates disputes, runs awareness programmes in RWAs and schools — replacing fear with understanding and confrontation with governance.</p><div class="cc-stats"><span> 150+ Conflicts Resolved</span><span> 40+ RWAs Engaged</span></div><a href="#">Learn More →</a></div></div>
       <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
-        <div class="cc-body"><span class="cc-tag ct4">#ProtectFeeders</span><h3>Legal Protection and Support for Community Feeders</h3><p>GOCAF registers feeders legally, provides documentation kits, offers legal guidance, and connects feeders with a city-wide support community.</p><div class="cc-stats"><span>⚖️ 25 Legal Cases Supported</span><span>📋 80+ Feeders Registered</span></div><a href="#">Learn More →</a></div></div>
+        <div class="cc-body"><span class="cc-tag ct4">#ProtectFeeders</span><h3>Legal Protection and Support for Community Feeders</h3><p>GOCAF registers feeders legally, provides documentation kits, offers legal guidance, and connects feeders with a city-wide support community.</p><div class="cc-stats"><span> 25 Legal Cases Supported</span><span> 80+ Feeders Registered</span></div><a href="#">Learn More →</a></div></div>
       <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
-        <div class="cc-body"><span class="cc-tag ct1">Spay &amp; Neuter Drive</span><h3>Humane Population Control for Community Animals</h3><p>Free and subsidised spay-neuter camps in partnership with certified veterinarians and municipal bodies across Hyderabad.</p><div class="cc-stats"><span>✂️ 500+ Animals Sterilised</span><span>🏥 8 Vet Partners</span></div><a href="#">Learn More →</a></div></div>
-      <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
-        <div class="cc-body"><span class="cc-tag ct6">Rapid Response</span><h3>24/7 Emergency Animal Rescue and Crisis Response</h3><p>GOCAF's Rapid Response Network deploys trained volunteers within 30–60 minutes of a distress call anywhere in Hyderabad.</p><div class="cc-stats"><span>⏱️ Avg. 45 min Response</span><span>🚑 847+ Animals Helped</span></div><a href="rescue.html">View Rescue Stories →</a></div></div>
-    </div>
+        <div class="cc-body"><span class="cc-tag ct1">Spay &amp; Neuter Drive</span><h3>Humane Population Control for Community Animals</h3><p>Free and subsidised spay-neuter camps in partnership with certified veterinarians and municipal bodies across Hyderabad.</p><div class="cc-stats"><span> 500+ Animals Sterilised</span><span> 8 Vet Partners</span></div><a href="#">Learn More →</a></div></div>
+      <!-- <div class="cc"><div class="cc-img"><img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="" loading="lazy"></div>
+        <div class="cc-body"><span class="cc-tag ct6">Rapid Response</span><h3>24/7 Emergency Animal Rescue and Crisis Response</h3><p>GOCAF's Rapid Response Network deploys trained volunteers within 30–60 minutes of a distress call anywhere in Hyderabad.</p><div class="cc-stats"><span> Avg. 45 min Response</span><span> 847+ Animals Helped</span></div><a href="rescue.html">View Rescue Stories →</a></div></div>
+    </div> -->
     <div class="sec-center"><a href="rescue.html" class="btn btn-outline-teal">View All Rescue Stories</a></div>
   </div>
 </section>
@@ -1032,27 +1853,27 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   <div class="container">
     <div class="sec-head" style="padding-top:0"><h2 class="sec-title">Our Impact in Numbers</h2></div>
     <div class="ctr-grid">
-      <div class="ci"><div class="ci-ico">🐾</div><div class="ci-num" data-target="500">0</div><p class="ci-lbl">Animals sterilised through our <a href="#campaigns">Spay &amp; Neuter Programme</a></p></div>
-      <div class="ci"><div class="ci-ico">🌏</div><div class="ci-num" data-target="12">0</div><p class="ci-lbl">Cities partnered for <a href="#">structured animal welfare governance</a></p></div>
-      <div class="ci"><div class="ci-ico">✍️</div><div class="ci-num" data-target="1000">0</div><p class="ci-lbl">Signatures for <a href="#">community animal protection policy change</a></p></div>
+      <div class="ci"><div class="ci-ico"></div><div class="ci-num" data-target="100">0</div><p class="ci-lbl">Animals sterilised through our <a href="#campaigns">Spay &amp; Neuter Programme</a></p></div>
+      <div class="ci"><div class="ci-ico"></div><div class="ci-num" data-target="4">0</div><p class="ci-lbl">Cities partnered for <a href="#">structured animal welfare governance</a></p></div>
+      <div class="ci"><div class="ci-ico"></div><div class="ci-num" data-target="600">0</div><p class="ci-lbl">Signatures for <a href="#">community animal protection policy change</a></p></div>
     </div>
   </div>
 </section>
 
 <!-- ACTION CARDS -->
-<section class="action-sec">
+<!-- <section class="action-sec">
   <div class="container">
     <div class="sec-head" style="padding-top:0"><h2 class="sec-title">How You Can Help</h2></div>
     <div class="action-grid">
-      <div class="ac"><img src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico">❤️</div><div class="ac-ttl">Donate</div><div class="ac-sub">Fund rescues, medical care, and welfare programmes</div><a href="#contact" class="btn btn-orange">Donate Now</a></div></div>
-      <div class="ac"><img src="https://images.pexels.com/photos/3280908/pexels-photo-3280908.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico">📣</div><div class="ac-ttl">Sign Petitions</div><div class="ac-sub">Add your voice to animal rights campaigns</div><a href="#contact" class="btn btn-purple">Sign Now</a></div></div>
-      <div class="ac"><img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico">🙋</div><div class="ac-ttl">Volunteer</div><div class="ac-sub">Join our compassionate volunteer network</div><a href="#contact" class="btn btn-teal">Sign Up</a></div></div>
-      <div class="ac"><img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico">🚨</div><div class="ac-ttl">Report Emergency</div><div class="ac-sub">Animal in distress? Our 24/7 team is ready!</div><a href="tel:+919390189589" class="btn btn-orange">Call Now</a></div></div>
-      <div class="ac"><img src="https://images.pexels.com/photos/1350591/pexels-photo-1350591.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico">⭐</div><div class="ac-ttl">Ambassador</div><div class="ac-sub">Use your voice to protect animals in your city</div><a href="#contact" class="btn btn-teal">Become One</a></div></div>
-      <div class="ac"><img src="https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico">📚</div><div class="ac-ttl">GOCAF Academy</div><div class="ac-sub">Free training for feeders &amp; volunteers</div><a href="#contact" class="btn btn-white">Learn More</a></div></div>
+      <div class="ac"><img src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico"></div><div class="ac-ttl">Donate</div><div class="ac-sub">Fund rescues, medical care, and welfare programmes</div><a href="#donate" class="btn btn-orange">Donate Now</a></div></div>
+      <div class="ac"><img src="https://images.pexels.com/photos/3280908/pexels-photo-3280908.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico"></div><div class="ac-ttl">Sign Petitions</div><div class="ac-sub">Add your voice to animal rights campaigns</div><a href="#contact" class="btn btn-purple">Sign Now</a></div></div>
+      <div class="ac"><img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico"></div><div class="ac-ttl">Volunteer</div><div class="ac-sub">Join our compassionate volunteer network</div><a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" class="btn btn-teal">Sign Up</a></div></div>
+      <div class="ac"><img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico"></div><div class="ac-ttl">Report Emergency</div><div class="ac-sub">Animal in distress? Our 24/7 team is ready!</div><a href="tel:+919390189589" class="btn btn-orange">Call Now</a></div></div>
+      <div class="ac"><img src="https://images.pexels.com/photos/1350591/pexels-photo-1350591.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico"></div><div class="ac-ttl">Ambassador</div><div class="ac-sub">Use your voice to protect animals in your city</div><a href="#contact" class="btn btn-teal">Become One</a></div></div>
+      <div class="ac"><img src="https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=500&h=400&fit=crop" alt="" loading="lazy"><div class="ac-ov"><div class="ac-ico"></div><div class="ac-ttl">GOCAF Academy</div><div class="ac-sub">Free training for feeders &amp; volunteers</div><a href="#contact" class="btn btn-white">Learn More</a></div></div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- STORYTELLING -->
 <section class="story-sec" id="vision">
@@ -1089,24 +1910,82 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
 </section>
 
 <!-- ================================================================
+     WHO ARE GOCAF VOLUNTEERS — LOGO BACKGROUND SECTION
+     ================================================================ -->
+<section class="logo-bg-sec lbs-dark" id="volunteers">
+  <div class="container">
+    <div class="sec-head" style="padding-top:0;text-align:left">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(193,123,58,.2);border:1px solid rgba(193,123,58,.4);padding:6px 16px;border-radius:20px;margin-bottom:16px">
+        <span style="font-size:12px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px"> GOCAF Volunteers</span>
+      </div>
+      <h2 class="lbs-title">Who Are GOCAF Volunteers?</h2>
+      <p style="font-size:17px;line-height:1.75;color:rgba(255,255,255,.82);max-width:760px;margin-top:10px">
+        GOCAF volunteers are not just supporters — they are <strong style="color:#fff">guardians on the ground</strong>. They are individuals who choose courage over silence and action over indifference.
+      </p>
+    </div>
+
+    <div class="lbs-grid">
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Fearless Protectors</div>
+        <div class="lbs-card-desc">They step in when animals are abused, injured, or neglected — no matter the situation.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Voices for the Voiceless</div>
+        <div class="lbs-card-desc">They report cruelty, escalate cases, and ensure animals are not ignored.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Responsible Feeders &amp; Caregivers</div>
+        <div class="lbs-card-desc">They provide food, water, and basic care while maintaining community balance.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Law-Aware &amp; Action-Oriented</div>
+        <div class="lbs-card-desc">They understand animal protection laws and use them to enforce accountability.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Calm in Crisis</div>
+        <div class="lbs-card-desc">Whether it's rescue, conflict, or confrontation — they act with control and clarity.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Consistent &amp; Committed</div>
+        <div class="lbs-card-desc">They show up daily. Not for recognition — but for responsibility.</div>
+      </div>
+    </div>
+
+    <div class="lbs-identity">
+      "We Are Not Bystanders. We Are Protectors."
+    </div>
+
+    <div style="text-align:center;margin-top:12px">
+      <a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" class="btn btn-orange btn-lg">🐾 Become a GOCAF Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
      GALLERY SECTION  — clean masonry with lightbox
      ================================================================ -->
-<section class="gallery-sec" id="gallery">
+<!-- <section class="gallery-sec" id="gallery">
   <div class="container">
     <div class="sec-head" style="padding-top:0">
-      <h2 class="sec-title">📸 GOCAF Gallery</h2>
+      <h2 class="sec-title"> GOCAF Gallery</h2>
       <p class="sec-sub">Moments from our rescue operations, campaigns, and community events across Hyderabad</p>
     </div>
-    <div class="gallery-grid">
+    <div class="gallery-grid"> -->
       <!-- #NoProofNoCatch Campaign Poster in Gallery -->
-      <div class="g-item wide" onclick="lbOpen(12)" style="border:3px solid #8B0000;grid-row:span 2">
+      <!-- <div class="g-item wide" onclick="lbOpen(12)" style="border:3px solid #8B0000;grid-row:span 2">
         <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0000 0%,#8B0000 50%,#2a0000 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px">
           <div style="font-size:11px;font-weight:700;color:#FFD700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">GOCAF NGO Campaign</div>
           <div style="font-size:32px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:8px">#No Proof,<br>No Catch</div>
           <div style="font-size:11px;color:rgba(255,255,255,.8);margin-bottom:12px;line-height:1.6">STOP CATCHING WITHOUT REASON<br>WE RESPECT LAW. WE DEMAND PROOF.</div>
           <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px">
-            <span style="background:rgba(255,255,255,.15);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px">⚖️ AWBI Rules</span>
-            <span style="background:rgba(255,255,255,.15);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px">🚫 No Proof = No Catch</span>
+            <span style="background:rgba(255,255,255,.15);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px"> AWBI Rules</span>
+            <span style="background:rgba(255,255,255,.15);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px"> No Proof = No Catch</span>
           </div>
           <div style="font-size:10px;color:#FFD700;font-weight:700">RAISE A VOICE · SAVE LIVES · BE THE CHANGE</div>
         </div>
@@ -1149,9 +2028,9 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
         <div class="g-caption">Structured feeding zone</div>
       </div>
       <div class="g-item" onclick="lbOpen(7)">
-        <img src="https://images.pexels.com/photos/3280908/pexels-photo-3280908.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop" alt="Volunteer training" loading="lazy">
+        <img src="https://images.pexels.com/photos/3280908/pexels-photo-3280908.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop" alt="Community education" loading="lazy">
         <div class="g-ov"><span class="g-ov-icon">+</span></div>
-        <div class="g-caption">Volunteer training</div>
+        <div class="g-caption">Community education</div>
       </div>
       <div class="g-item" onclick="lbOpen(8)">
         <img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop" alt="Emergency shelter" loading="lazy">
@@ -1175,21 +2054,188 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       </div>
     </div>
   </div>
+</section> -->
+
+<!-- ================================================================
+     WHY WORK WITH GOCAF — LOGO BACKGROUND SECTION
+     ================================================================ -->
+<section class="logo-bg-sec lbs-light" id="why-gocaf">
+  <div class="container">
+    <div class="sec-head" style="padding-top:0;text-align:left">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(59,110,110,.12);border:1px solid rgba(59,110,110,.25);padding:6px 16px;border-radius:20px;margin-bottom:16px">
+        <span style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px">💚 Our Difference</span>
+      </div>
+      <h2 class="lbs-title">Why Work With GOCAF?</h2>
+      <p style="font-size:17px;line-height:1.75;color:#555;max-width:760px;margin-top:10px">
+        Because this is not just volunteering — it's standing up for lives that depend on you. At GOCAF, your actions create <strong>real, visible impact</strong> every single day.
+      </p>
+    </div>
+
+    <div class="lbs-grid">
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Real Impact, Not Just Words</div>
+        <div class="lbs-card-desc">Every report, rescue, and action directly protects an animal from suffering.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Be Part of Enforcement</div>
+        <div class="lbs-card-desc">We don't stop at posting — we follow through until action is taken.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Strong Legal &amp; Ground Support</div>
+        <div class="lbs-card-desc">You are backed by a system that believes in accountability and justice.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Community That Has Your Back</div>
+        <div class="lbs-card-desc">You're never alone — GOCAF is a network of people who step in together.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Purpose-Driven Work</div>
+        <div class="lbs-card-desc">Every effort you put in has meaning — saving lives, preventing cruelty, creating change.</div>
+      </div>
+      <div class="lbs-card">
+        <div class="lbs-card-ico"></div>
+        <div class="lbs-card-title">Build Courage &amp; Leadership</div>
+        <div class="lbs-card-desc">You grow into someone who can handle real situations and make tough decisions.</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:28px">
+      <h3 style="font-size:20px;font-weight:900;color:var(--teal-dark);margin-bottom:16px">What You Gain</h3>
+      <div class="lbs-gain-grid">
+        <div class="lbs-gain"><div class="lbs-gain-dot"></div><div style="font-size:14px;color:#444;line-height:1.55">A clear sense of purpose</div></div>
+        <div class="lbs-gain"><div class="lbs-gain-dot"></div><div style="font-size:14px;color:#444;line-height:1.55">Real-world experience in rescue, reporting, and conflict handling</div></div>
+        <div class="lbs-gain"><div class="lbs-gain-dot"></div><div style="font-size:14px;color:#444;line-height:1.55">Strong legal awareness on animal rights</div></div>
+        <div class="lbs-gain"><div class="lbs-gain-dot"></div><div style="font-size:14px;color:#444;line-height:1.55">The confidence to stand up and take action</div></div>
+      </div>
+    </div>
+
+    <div class="lbs-power">
+      "With GOCAF, you don't just care — you act, protect, and enforce."
+    </div>
+
+    <div style="text-align:center;margin-top:28px">
+      <a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" class="btn btn-teal btn-lg">🐾 Join GOCAF Today</a>
+    </div>
+  </div>
 </section>
 
 <!-- VISION -->
 <section class="vision-sec" id="gocaf-vision">
   <div class="container">
-    <div class="sec-head" style="padding-top:0"><h2 class="sec-title">GOCAF Vision</h2></div>
+
+    <div class="sec-head" style="padding-top:0">
+      <h2 class="sec-title">GOCAF Vision</h2>
+    </div>
+
     <div class="v-inner">
-      <div class="v-quote">A future where people and animals coexist peacefully is not a dream — it is a responsibility. GOCAF exists to make that future real.</div>
-      <p>To create a world where every community animal lives with dignity, safety, and freedom — supported by structured, lawful, and compassionate human systems.</p>
-      <p>GOCAF aims to transform animal welfare from chaotic rescue into structured governance — where compassion is backed by <strong>policy, technology, and accountability.</strong></p>
-      <div style="margin-top:26px"><a href="#founder" class="btn btn-teal btn-lg">Meet Our Founder</a></div>
+
+      <!-- Highlight Quote -->
+      <div class="v-quote">
+        “A future where people and animals coexist peacefully is not a dream — it is a responsibility. GOCAF exists to make that future real.”
+      </div>
+
+      <!-- Intro -->
+      <p class="v-intro">
+        To build a society where every community animal is respected as a living being with rights, protected by law, and cared for by compassionate communities.
+      </p>
+
+      <!-- Vision Points -->
+      <section class="vision-sec" id="gocaf-vision">
+  <div class="container narrow">
+
+    <h2 class="sec-title center">GOCAF Vision</h2>
+
+    <!-- Quote -->
+    <div class="vision-quote">
+      “A future where people and animals coexist peacefully is not a dream — it is a responsibility.”
+    </div>
+
+    <!-- Description -->
+    <p class="vision-desc">
+      To build a society where every community animal is respected, protected by law, and cared for by compassionate communities.
+    </p>
+
+    <!-- Points -->
+    <div class="vision-list">
+      <div> Zero animal cruelty and violence in cities</div>
+      <div> Humans and animals living in harmony</div>
+      <div> Every act of cruelty reported, tracked, and punished</div>
+      <div> Access to food, water, shelter, and medical care</div>
+      <div> Citizens acting as protectors, not bystanders</div>
+    </div>
+
+  </div>
+</section>
+<section class="culture-sec" id="culture">
+  <div class="container">
+
+    <div class="culture-head">
+      <h2>GOCAF Culture</h2>
+      <p>Built on courage, compassion, and accountability.</p>
+    </div>
+
+    <div class="culture-grid">
+
+      <div class="culture-card">
+         <h4>Compassion with Action</h4>
+        <p>We act, rescue, and protect.</p>
+      </div>
+
+      <div class="culture-card">
+         <h4>Zero Tolerance</h4>
+        <p>Every abuse is challenged.</p>
+      </div>
+
+      <div class="culture-card">
+         <h4>Accountability</h4>
+        <p>Responsibility is mandatory.</p>
+      </div>
+
+      <div class="culture-card">
+         <h4>Community Power</h4>
+        <p>People drive the mission.</p>
+      </div>
+
+      <div class="culture-card">
+         <h4>Courage</h4>
+        <p>We stand firm always.</p>
+      </div>
+
+      <div class="culture-card">
+         <h4>Law & Ethics</h4>
+        <p>Legal + ethical action.</p>
+      </div>
+
+    </div>
+
+    <div class="culture-tagline">
+      Act. Protect. Enforce. Repeat.
+    </div>
+
+  </div>
+</section>
+    <!-- Tagline -->
+    <!-- <div class="culture-tagline">
+      “Act. Protect. Enforce. Repeat.”
+    </div> -->
+
+  </div>
+</section>
+      <!-- CTA -->
+      <div style="margin-top:30px">
+        <a href="#founder" class="btn btn-teal btn-lg">
+          Meet Our Founder
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
-
 <!-- FOUNDER -->
 <section class="founder-sec" id="founder">
   <div class="container">
@@ -1204,7 +2250,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
         <p>GOCAF was founded with a simple yet powerful belief: community animals deserve freedom, dignity, and protection — not conflict, fear, or neglect. Across cities, towns, and villages, animals live alongside us every day. They are part of our shared ecosystem and our shared responsibility.</p>
         <p>Over the years, I have witnessed how lack of awareness, misinformation, and absence of structured systems lead to unnecessary suffering. GOCAF was born to bridge this gap.</p>
         <p><strong>Our approach:</strong></p>
-        <ul class="f-list" style="margin-bottom:14px">
+        <!-- <ul class="f-list" style="margin-bottom:14px"> -->
           <li>We stand with the law, not above it.</li>
           <li>We support communities, not divide them.</li>
           <li>We protect animals, without exploiting emotion or charity.</li>
@@ -1222,7 +2268,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
   <div class="container">
     <div class="par-grid">
       <div class="par-box">
-        <h3>📰 Press Corner</h3>
+        <h3> Press Corner</h3>
         <a href="#" class="btn btn-white" style="margin-bottom:14px;display:inline-block">More</a>
         <p>Our press corner includes the latest press releases on animal welfare, operations, and rescues. Are you a journalist? Contact our press team to set up an interview.</p>
       </div>
@@ -1238,7 +2284,7 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
         </div>
       </div>
       <div class="par-box">
-        <h3>📧 Stay Updated</h3>
+        <h3> Stay Updated</h3>
         <a href="#contact" class="btn btn-orange" style="margin-bottom:14px;display:inline-block">Subscribe</a>
         <p>Subscribe to our newsletter and be the first to hear about rescue missions, impactful campaigns, and touching animal stories.</p>
       </div>
@@ -1267,13 +2313,11 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <div style="max-width:420px;padding-top:8px">
         <h3 style="font-size:22px;font-weight:900;color:var(--black);margin-bottom:16px">Why Donate to GOCAF?</h3>
         <ul style="list-style:none;padding:0;margin-bottom:24px">
-          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px">🐾</span><span><strong>Medical &amp; Emergency Care</strong> — Funding surgeries, medicines, and 24/7 emergency rescues</span></li>
-          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px">🍽️</span><span><strong>Feeding Programmes</strong> — Supporting 200+ community animals fed daily across Hyderabad</span></li>
-          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px">⚖️</span><span><strong>Legal Aid for Feeders</strong> — Protecting the rights of animal caregivers in court</span></li>
-          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px">✂️</span><span><strong>Spay &amp; Neuter Drives</strong> — Humane population control with certified vets</span></li>
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px"></span><span><strong>Medical &amp; Emergency Care</strong> — Funding surgeries, medicines, and 24/7 emergency rescues</span></li>
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px"></span><span><strong>Feeding Programmes</strong> — Supporting 200+ community animals fed daily across Hyderabad</span></li>
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px"></span><span><strong>Legal Aid for Feeders</strong> — Protecting the rights of animal caregivers in court</span></li>
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:15px;color:#444"><span style="font-size:20px"></span><span><strong>Spay &amp; Neuter Drives</strong> — Humane population control with certified vets</span></li>
         </ul>
-        <a href="#contact" class="btn btn-orange btn-lg">Donate via Contact Form</a>
-        <p style="font-size:12px;color:var(--gray-mid);margin-top:12px">Or scan the QR code / use UPI ID above for instant payment</p>
       </div>
     </div>
   </div>
@@ -1305,13 +2349,13 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
       <div class="c-info">
         <p><strong>Global Organization For Community Animal Freedom Foundation (GOCAF)</strong></p>
         <hr class="c-divider">
-        <p>📍 Hyderabad, Telangana, India – 502032</p>
-        <p>📞 <a href="tel:+919390189589">+91 93901 89589</a></p>
-        <p>✉️ <a href="mailto:info@gocaf.global">info@gocaf.global</a></p>
-        <p>🌐 <a href="https://www.gocaf.global" target="_blank">www.gocaf.global</a></p>
-        <p>💬 <a href="https://wa.me/919390189589" target="_blank">WhatsApp Us</a></p>
+        <p> Hyderabad, Telangana, India – 502032</p>
+        <p> <a href="tel:+919390189589">+91 93901 89589</a></p>
+        <p> <a href="mailto:info@gocaf.global">info@gocaf.global</a></p>
+        <p> <a href="https://www.gocaf.global" target="_blank">www.gocaf.global</a></p>
+        <p> <a href="https://wa.me/919390189589" target="_blank">WhatsApp Us</a></p>
         <hr class="c-divider">
-        <p><strong>🚨 24/7 Animal Emergency Helpline:</strong></p>
+        <p><strong> 24/7 Animal Emergency Helpline:</strong></p>
         <p><a href="tel:+919390189589" style="font-size:24px;font-weight:900;color:var(--orange)">+91 93901 89589</a></p>
         <hr class="c-divider">
         <p><strong>Follow GOCAF on Social Media:</strong></p>
@@ -1410,8 +2454,8 @@ footer{background:#1a1a1a;padding:44px 0 18px;text-align:center}
 </footer>
 
 <div class="sticky-mob">
-  <a href="#contact" style="background:var(--orange)">Donate</a>
-  <a href="#contact" style="background:var(--teal)">Volunteer</a>
+  <a href="#donate" style="background:var(--orange)">Donate</a>
+  <a href="https://wa.me/919390189589?text=I%20want%20to%20become%20the%20Volunteer%20for%20GOCAF" target="_blank" style="background:var(--teal)">Volunteer</a>
 </div>
 <button id="go-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button> 
 
@@ -1441,11 +2485,11 @@ async function submitFeedback(){
   const rating = rEl ? parseInt(rEl.value) : 0;
 
   if(!fname||!email||!msg||!rating){
-    showToast('⚠️  Please fill in all required fields and select a star rating.','#C0392B');
+    showToast('  Please fill in all required fields and select a star rating.','#C0392B');
     return;
   }
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    showToast('⚠️  Please enter a valid email address.','#C0392B');
+    showToast('  Please enter a valid email address.','#C0392B');
     return;
   }
 
@@ -1562,7 +2606,7 @@ async function submitContact(){
   const msg    = document.getElementById('c-msg').value.trim();
 
   if(!fname||!email||!reason||!msg){
-    showToast('⚠️  Please fill in all required fields.','#C0392B');
+    showToast('  Please fill in all required fields.','#C0392B');
     return;
   }
 
@@ -1589,7 +2633,7 @@ async function submitContact(){
     if(res.ok){
       ['c-fname','c-lname','c-email','c-phone','c-msg'].forEach(id=>document.getElementById(id).value='');
       document.getElementById('c-reason').value='';
-      showToast('✅  Message sent! We will reply within 24 hours.','var(--teal)');
+      showToast('  Message sent! We will reply within 24 hours.','var(--teal)');
     } else {
       throw new Error('Formspree error');
     }
@@ -1704,6 +2748,9 @@ document.querySelectorAll('.ci-num[data-target]').forEach(el=>{
 function fixMegaPos(){
   const h=document.getElementById('header').getBoundingClientRect().bottom;
   document.querySelectorAll('.mega,.gdrop').forEach(m=>m.style.top=h+'px');
+  // Keep ticker banner sticky just below the header
+  const ticker=document.querySelector('.service-ticker');
+  if(ticker) ticker.style.top=document.getElementById('header').offsetHeight+'px';
 }
 window.addEventListener('scroll',fixMegaPos,{passive:true});
 window.addEventListener('resize',fixMegaPos);
